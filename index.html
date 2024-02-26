@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EcoNest - The New Eco-Friendly Space</title>
+    <link rel="icon" type="image/x-icon" href="images/econest-without-background.png">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+      /* Slide-up animation */
+      @keyframes slideUp {
+            from {
+                transform: translateY(100px);
+                opacity: 0;
+            }
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        /* The typing effect */
+        @keyframes typing {
+        from { width: 0% }
+        to { width: 100% }
+      }
+
+      /* The typewriter cursor effect */
+      @keyframes blink-caret {
+        from, to { border-color: transparent }
+        50% { border-color: white; }
+      }
+
+      body {
+        background: linear-gradient(to top, #e7e9e7 0%, #666d72 100%);
+        font-family: 'Poppins', sans-serif;
+        color: #F8F8F8;
+        text-shadow: 2px 2px 4px #000000;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+      }
+
+      body::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url('images/econest-logo.png'); /* Update with your local image path */
+        background-size: cover;
+        background-position: center;
+        filter: blur(10px);
+        z-index: -1;
+      }
+
+      .typewriter {
+        overflow: hidden; /* Ensures the content is not revealed until the animation */
+        border-right: .15em solid white; /* The typewriter cursor */
+        white-space: nowrap; /* Keeps the content on a single line */
+        /* letter-spacing: .15em; Adjust as needed */
+        animation: 
+            typing 2.3s steps(10, end),
+            blink-caret .75s step-end infinite;
+      }
+
+        .container {
+            z-index: 2; /* Ensure the content is above the blurred background */
+            max-width: 600px;
+            padding: 15px;
+            /* backdrop-filter: blur(5px); */
+        }
+
+        .title {
+            font-size: 40px;
+            margin-bottom: 10px;
+            /* animation: slideUp 1s ease-out; */
+        }
+        
+        .description {
+            font-size: 20px;
+            margin-bottom: 20px;
+            animation: slideUp 1.5s ease-out;
+
+        }
+        .title img {
+            height: 80px;
+            width: auto;
+        }
+
+       
+
+   
+
+        .download-button img {
+            height: 60px;
+            width: auto;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .description {
+                font-size: 18px;
+            }
+
+            .title {
+                font-size: 35px;
+            }
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+       
+        <div class="title">
+          <h2>EcoNest</h2>
+        </div>
+        <div class="description">
+          <p>Coming Soon...</p>
+        </div>
+        <div  class="description">
+          <p class="typewriter">The New Eco-Friendly Space</p>
+        </div>
+       
+    </div>
+</body>
+</html>
