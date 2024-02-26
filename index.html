@@ -6,6 +6,7 @@
     <title>EcoNest - The New Eco-Friendly Space</title>
     <link rel="icon" type="image/x-icon" href="images/econest-without-background.png">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
     <style>
       /* Slide-up animation */
       @keyframes slideUp {
@@ -33,7 +34,7 @@
 
       body {
         background: linear-gradient(to top, #e7e9e7 0%, #666d72 100%);
-        font-family: 'Poppins', sans-serif;
+        font-family: 'Orbitron', sans-serif;
         color: #F8F8F8;
         text-shadow: 2px 2px 4px #000000;
         margin: 0;
@@ -67,12 +68,12 @@
         white-space: nowrap; /* Keeps the content on a single line */
         /* letter-spacing: .15em; Adjust as needed */
         animation: 
-            typing 2.3s steps(10, end),
+            typing 2.8s steps(20, end),
             blink-caret .75s step-end infinite;
       }
 
         .container {
-            z-index: 2; /* Ensure the content is above the blurred background */
+            z-index: 0; /* Ensure the content is above the blurred background */
             max-width: 600px;
             padding: 15px;
             /* backdrop-filter: blur(5px); */
@@ -87,7 +88,7 @@
         .description {
             font-size: 20px;
             margin-bottom: 20px;
-            animation: slideUp 1.5s ease-out;
+            animation: slideUp 2.5s ease-out;
 
         }
         .title img {
@@ -115,21 +116,49 @@
             }
         }
 
+      @keyframes openCurtain {
+        0% { transform: translateX(0); }
+        100% { transform: translateX(calc(-100% - 5px)); } /* 5px accounts for any possible margin/padding */
+      }
+
+      @keyframes openCurtainRight {
+        0% { transform: translateX(0); }
+        100% { transform: translateX(calc(100% + 5px)); } /* 5px accounts for any possible margin/padding */
+      }
+
+      .curtain {
+        filter: blur(10px);
+        position: absolute;
+        top: 0;
+        width: 100%; /* Half the width of the viewport */
+        height: 100%;
+        background: #1c2d29; /* Curtain color */
+        z-index: 10;
+        animation: openCurtain 3s forwards; /* Adjust timing as needed */
+      }
+
+      .curtain-right {
+        right: 0;
+        animation: openCurtainRight 3s forwards; /* Adjust timing as needed */
+      }
+      
+
     </style>
 </head>
 <body>
+  <div class="curtain"></div>
+  <div class="curtain curtain-right"></div>
     <div class="container">
-       
-        <div class="title">
-          <h2>EcoNest</h2>
-        </div>
-        <div class="description">
-          <p>Coming Soon...</p>
-        </div>
-        <div  class="description">
-          <p class="typewriter">The New Eco-Friendly Space</p>
-        </div>
-       
+      <div class="title">
+        <h2>EcoNest</h2>
+      </div>
+      <div  class="description">
+        <h4 class="typewriter">The New Eco-Friendly Space</h4>
+      </div>
+      <div class="description">
+        <p>Coming Soon...</p>
+      </div>
     </div>
+  
 </body>
 </html>
